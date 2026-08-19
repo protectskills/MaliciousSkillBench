@@ -380,24 +380,35 @@ figcaption {
   max-width: 100%;
 }
 
-table {
+.table-wrap table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: 0.95rem;
 }
 
-th, td {
-  text-align: left;
+.table-wrap th,
+.table-wrap td {
   padding: 10px 12px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
 
-th {
+.table-wrap th {
   color: var(--deep);
 }
 
-td.num {
+.table-wrap th:first-child,
+.table-wrap td:first-child {
+  width: 50%;
+  text-align: left;
+}
+
+.table-wrap th:nth-child(2),
+.table-wrap td:nth-child(2),
+.table-wrap th:nth-child(3),
+.table-wrap td:nth-child(3) {
+  width: 25%;
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
