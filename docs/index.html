@@ -17,7 +17,7 @@
     <div class="wrap">
       <a class="brand" href="#main">MaliciousSkillBench</a>
       <nav class="nav" aria-label="Primary">
-        <a data-msb-link="PAPER_URL" href="#paper">Paper</a>
+        <span class="nav-soon">Paper — Coming Soon</span>
         <a data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
         <a data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
         <a data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
@@ -27,15 +27,28 @@
 
   <main id="main">
     <section class="hero wrap">
-      <p class="eyebrow">Security research benchmark</p>
-      <h1>MaliciousSkillBench</h1>
-      <p class="subtitle">A Comprehensive Benchmark for Malicious Agent Skill Detection</p>
-      <p class="lede">A consolidated benchmark of 9,740 Agent Skills from 13 public sources for controlled malicious-skill detection under random, structural-disjoint, and source-disjoint protocols.</p>
-      <div class="actions">
-        <a class="btn" data-msb-link="PAPER_URL" href="#paper">Paper</a>
-        <a class="btn secondary" data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
-        <a class="btn secondary" data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
-        <a class="btn secondary" data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow">Security research benchmark</p>
+          <h1>MaliciousSkillBench</h1>
+          <p class="subtitle">A Comprehensive Benchmark for Malicious Agent Skill Detection</p>
+          <p class="lede">A consolidated benchmark of 9,740 Agent Skills from 13 public sources for controlled malicious-skill detection under random, structural-disjoint, and source-disjoint protocols.</p>
+          <div class="actions">
+            <span class="btn coming-soon">Paper — Coming Soon</span>
+            <a class="btn secondary" data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
+            <a class="btn secondary" data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
+            <a class="btn secondary" data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
+          </div>
+        </div>
+        <aside class="hero-glance" aria-label="Benchmark at a Glance">
+          <p class="hero-glance-kicker">At a glance</p>
+          <dl>
+            <div><dt>9,740</dt><dd>Skills</dd></div>
+            <div><dt>13</dt><dd>Public Sources</dd></div>
+            <div><dt>7,505</dt><dd>Malicious</dd></div>
+            <div><dt>4,588</dt><dd>Structural Families</dd></div>
+          </dl>
+        </aside>
       </div>
     </section>
 
@@ -127,7 +140,7 @@ dataset = load_dataset("ProtectSkills/MaliciousSkillBench")</code></pre>
 
     <section class="wrap" id="documentation">
       <h2>Getting Started</h2>
-      <p class="section-copy">The <a href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> is the code and reproducibility hub. It hosts schema, source, taxonomy, and protocol documentation, frozen split manifests, and baseline evaluation scripts. The Dataset button points to the Hugging Face repository. The Paper button remains inactive until a public paper URL is assigned.</p>
+      <p class="section-copy">The <a href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> is the code and reproducibility hub. It hosts schema, source, taxonomy, and protocol documentation, split manifests, and baseline evaluation scripts. The Dataset button points to the Hugging Face repository. A paper link will be added when a public URL is assigned.</p>
     </section>
 
     <section class="wrap" id="paper">

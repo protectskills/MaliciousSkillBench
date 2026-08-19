@@ -99,8 +99,92 @@ button:focus-visible {
 }
 
 .hero {
-  padding: 72px 0 28px;
+  padding: 72px 0 36px;
   min-width: 0;
+  border-top: 0;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 300px);
+  gap: 36px 48px;
+  align-items: start;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-glance {
+  background: var(--wash);
+  border-top: 4px solid var(--warm);
+  padding: 18px 20px 16px;
+  min-width: 0;
+}
+
+.hero-glance-kicker {
+  margin: 0 0 12px;
+  color: var(--cyan);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-glance dl {
+  margin: 0;
+}
+
+.hero-glance dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+
+.hero-glance dl > div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.hero-glance dt {
+  margin: 0;
+  color: var(--blue);
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-glance dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.nav-soon,
+.btn.coming-soon {
+  color: var(--muted);
+  cursor: default;
+}
+
+.nav-soon {
+  font-size: 0.92rem;
+  font-weight: 650;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.btn.coming-soon {
+  background: var(--wash);
+  border-color: var(--line);
+  font-weight: 650;
 }
 
 .eyebrow {
@@ -170,10 +254,6 @@ h1 {
 .btn.secondary {
   background: #fff;
   color: var(--blue);
-}
-
-.btn.is-placeholder {
-  opacity: 0.92;
 }
 
 .cards {
@@ -357,6 +437,11 @@ button {
   font-size: 0.92rem;
 }
 
+@media (max-width: 900px) {
+  .hero-layout { grid-template-columns: minmax(0, 1fr); }
+  .hero-glance { max-width: none; }
+}
+
 @media (max-width: 1100px) {
   .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -376,7 +461,8 @@ button {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .actions .btn {
+  .actions .btn,
+  .actions .coming-soon {
     width: 100%;
   }
   section { padding: 40px 0; }
