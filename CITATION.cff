@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection"
+message: "If you use MaliciousSkillBench, please cite the title and author list below. A persistent identifier will be added when available."
+type: dataset
+repository-code: "https://github.com/protectskills/MaliciousSkillBench"
+authors:
+  - family-names: Wang
+    given-names: Yue
+    affiliation: "State Key Laboratory for Novel Software Technology, Nanjing University"
+  - family-names: Liu
+    given-names: Yi
+    affiliation: "Griffith University"
+  - family-names: Deng
+    given-names: Gelei
+    affiliation: "Nanyang Technological University"
+  - family-names: Zhang
+    given-names: Ying
+    affiliation: "Wake Forest University"
+  - family-names: Li
+    given-names: Yuekang
+    affiliation: "University of New South Wales"
+  - family-names: Chen
+    given-names: Zhenyu
+    affiliation: "State Key Laboratory for Novel Software Technology, Nanjing University"
+  - family-names: Zhang
+    given-names: Leo
+    affiliation: "Griffith University"
+abstract: "MaliciousSkillBench is a comprehensive benchmark for malicious Agent Skill detection that preserves source provenance across heterogeneous public resources."
+keywords:
+  - agent skills
+  - malicious skill detection
+  - prompt injection
+  - security benchmark
+  - provenance

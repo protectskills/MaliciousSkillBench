@@ -1,0 +1,15 @@
+{
+  "public_sources": 13,
+  "core_sources": 11,
+  "total": 9740,
+  "malicious": 7505,
+  "benign": 2235,
+  "structural_families": 4588,
+  "attack_categories": 11,
+  "attack_mapped": 4983,
+  "impact_mapped": 2128,
+  "attack_impact_intersection": 1888,
+  "public_text": 9549,
+  "withheld_sensitive": 5,
+  "withheld_snapshot": 186
+}

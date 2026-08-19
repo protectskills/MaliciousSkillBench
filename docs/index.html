@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MaliciousSkillBench</title>
+  <meta name="description" content="MaliciousSkillBench is a comprehensive benchmark for malicious Agent Skill detection, consolidating 9,740 identities from 13 public sources.">
+  <meta property="og:title" content="MaliciousSkillBench">
+  <meta property="og:description" content="A comprehensive benchmark for malicious Agent Skill detection: 9,740 identities from 13 public sources.">
+  <meta property="og:image" content="assets/figures/figure1.png">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#main">MaliciousSkillBench</a>
+      <nav class="nav" aria-label="Primary">
+        <a data-msb-link="PAPER_URL" href="#paper">Paper</a>
+        <a data-msb-link="DATASET_URL" href="#dataset">Dataset</a>
+        <a data-msb-link="GITHUB_URL" href="#">GitHub</a>
+        <a data-msb-link="DOCS_URL" href="#documentation">Documentation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <p class="eyebrow">Security research benchmark</p>
+      <h1>MaliciousSkillBench</h1>
+      <p class="subtitle">A Comprehensive Benchmark for Malicious Agent Skill Detection</p>
+      <p class="lede">A consolidated benchmark of 9,740 Agent Skills from 13 public sources for controlled malicious-skill detection under random, structural-disjoint, and source-disjoint protocols.</p>
+      <div class="actions">
+        <a class="btn" data-msb-link="PAPER_URL" href="#paper">Paper</a>
+        <a class="btn secondary" data-msb-link="DATASET_URL" href="#dataset">Dataset</a>
+        <a class="btn secondary" data-msb-link="GITHUB_URL" href="#">GitHub</a>
+        <a class="btn secondary" data-msb-link="DOCS_URL" href="#documentation">Documentation</a>
+      </div>
+    </section>
+
+    <section class="wrap" id="why">
+      <h2>Why MaliciousSkillBench?</h2>
+      <p class="section-copy">Existing malicious Agent Skill resources are fragmented across sources, artifact formats, provenance conventions, label evidence, and benign support. MaliciousSkillBench consolidates these resources rather than concatenating them, with canonicalization, deduplication, structural control, cross-label conflict handling, and benchmark-specific evaluation protocols.</p>
+    </section>
+
+    <section class="wrap" id="glance">
+      <h2>Benchmark at a Glance</h2>
+      <div class="cards" aria-label="Benchmark scale">
+        <div class="card"><strong>13</strong><span>Public Sources</span></div>
+        <div class="card"><strong>11</strong><span>Core Sources</span></div>
+        <div class="card"><strong>9,740</strong><span>Benchmark Skills</span></div>
+        <div class="card"><strong>7,505</strong><span>Malicious</span></div>
+        <div class="card"><strong>2,235</strong><span>Benign</span></div>
+        <div class="card"><strong>4,588</strong><span>Structural Families</span></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="construction">
+      <h2>Benchmark Construction</h2>
+      <p class="section-copy">Existing Agent Skill security resources are fragmented across artifact forms, provenance, label evidence, and benign support. MaliciousSkillBench consolidates them rather than concatenating them.</p>
+      <figure>
+        <a href="assets/figures/figure1.png">
+          <img src="assets/figures/figure1.png" alt="Overview of MaliciousSkillBench data collection, consolidate-not-concatenate construction, and detection evaluation.">
+        </a>
+        <figcaption>Figure 1. Benchmark overview: collection, construction, and evaluation. Click to open a larger image.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap" id="threat">
+      <h2>Threat Landscape</h2>
+      <p class="section-copy">A multi-label harmonized attack taxonomy covers 4,983 of 7,505 malicious identities across 11 categories. This is partial mapping, not complete attack coverage. Figure 2 is the quantitative threat landscape; the miniature matrix in Figure 1 is schematic.</p>
+      <figure>
+        <a href="assets/figures/figure2.png">
+          <img src="assets/figures/figure2.png" alt="Quantitative threat landscape with attack distribution, source-by-attack heatmap, and attack-by-impact heatmap.">
+        </a>
+        <figcaption>Figure 2. Quantitative threat landscape for 4,983 attack-mapped identities and 1,888 attack × impact identities.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap" id="results">
+      <h2>Detection Findings</h2>
+      <p class="section-copy">Word-SVM Macro-F1 remains high under random and structural-disjoint splits, then drops under source shift. This is source-conditioned generalization, not a universal out-of-distribution claim.</p>
+      <div class="gap" aria-label="Word-SVM Macro-F1 across protocols">
+        <div class="gap-item">
+          <span class="value">0.932</span>
+          <span class="label">Random Macro-F1</span>
+        </div>
+        <div class="gap-item">
+          <span class="value">0.916</span>
+          <span class="label">M-Structural-Disjoint</span>
+        </div>
+        <div class="gap-item source">
+          <span class="value">0.665</span>
+          <span class="label">Source-Disjoint</span>
+        </div>
+      </div>
+      <p class="section-copy">Under Source-Disjoint evaluation, Word-SVM retains 95.6% malicious recall but reaches a 62.4% benign false-positive rate. Cross-source degradation is dominated by benign over-flagging while malicious recall remains high.</p>
+      <div class="table-wrap">
+        <table>
+          <caption class="section-copy">Source-Disjoint operating points. Low false-positive rate is not uniformly better when recall is near zero.</caption>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th class="num">Recall</th>
+              <th class="num">Benign FPR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Word-SVM</td><td class="num">95.6%</td><td class="num">62.4%</td></tr>
+            <tr><td>SkillFortify-offline</td><td class="num">25.3%</td><td class="num">49.9%</td></tr>
+            <tr><td>Cisco-local-behavioral</td><td class="num">2.5%</td><td class="num">1.1%</td></tr>
+            <tr><td>SkillSpector-static</td><td class="num">0.0%</td><td class="num">0.55%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap" id="dataset">
+      <h2>Dataset Access</h2>
+      <p class="section-copy">All 9,740 benchmark identities are represented in the public dataset; 9,549 provide public Skill text, while the remaining records retain metadata and provenance information without full text (5 sensitive-withheld, 186 snapshot-withheld). Hugging Face is the primary data host.</p>
+      <pre><code>from datasets import load_dataset
+
+dataset = load_dataset("ORG/MaliciousSkillBench")</code></pre>
+      <p class="section-copy"><code>ORG/MaliciousSkillBench</code> is a staging placeholder and is not a live repository.</p>
+    </section>
+
+    <section class="wrap" id="documentation">
+      <h2>Getting Started</h2>
+      <p class="section-copy">The <a href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> is the code and reproducibility hub. It hosts schema, source, taxonomy, and protocol documentation, frozen split manifests, and baseline evaluation scripts. The Paper and Dataset buttons remain inactive until public URLs are assigned.</p>
+    </section>
+
+    <section class="wrap" id="paper">
+      <h2>Paper</h2>
+      <p class="section-copy"><strong>MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection</strong></p>
+      <p class="section-copy">Yue Wang, Yi Liu, Gelei Deng, Ying Zhang, Yuekang Li, Zhenyu Chen, and Leo Zhang.</p>
+      <p class="section-copy">The public paper URL is not yet assigned.</p>
+    </section>
+
+    <section class="wrap" id="citation">
+      <div class="citation-head">
+        <h2>Citation</h2>
+        <button type="button" id="copy-citation">Copy</button>
+      </div>
+      <pre id="citation-block"><code>@unpublished{wang2026maliciousskillbench,
+  title={MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection},
+  author={Wang, Yue and Liu, Yi and Deng, Gelei and Zhang, Ying and Li, Yuekang and Chen, Zhenyu and Zhang, Leo},
+  note={Unpublished manuscript. Publication venue and persistent identifier to be added.},
+  year={2026}
+}</code></pre>
+    </section>
+
+    <section class="wrap" id="responsible-use">
+      <h2>Responsible Use</h2>
+      <p class="section-copy">The benchmark contains malicious or adversarial Skill instructions for defensive research. Do not execute untrusted Skills. The public release emphasizes static instruction text; some content is withheld. See <a href="https://github.com/protectskills/MaliciousSkillBench/blob/main/RESPONSIBLE_USE.md">RESPONSIBLE_USE.md</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">MaliciousSkillBench · a comprehensive benchmark for malicious agent skill detection</div>
+  </footer>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

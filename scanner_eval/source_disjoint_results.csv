@@ -1,0 +1,5 @@
+method,protocol,macro_f1,malicious_recall,benign_fpr
+Cisco-local-behavioral,source_disjoint,0.308,0.025,0.011
+SkillFortify-offline,source_disjoint,0.349,0.253,0.499
+SkillSpector-static,source_disjoint,0.281,0.000,0.0055
+Word-SVM,source_disjoint,0.665,0.956,0.624

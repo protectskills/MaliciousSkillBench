@@ -1,0 +1,567 @@
+{
+  "dataset_name": "MaliciousSkillBench",
+  "format": "Typed Parquet",
+  "configs": {
+    "primary": {
+      "file": "primary.parquet",
+      "fields": [
+        {
+          "name": "benchmark_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Stable primary benchmark identity."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen label code: 1 is malicious and 0 is benign."
+        },
+        {
+          "name": "skill_text",
+          "type": "string",
+          "nullable": true,
+          "description": "Static Skill text; null only for intentionally withheld records."
+        },
+        {
+          "name": "text_available",
+          "type": "boolean",
+          "nullable": false,
+          "description": "Whether public static text is present."
+        },
+        {
+          "name": "text_redacted",
+          "type": "boolean",
+          "nullable": false,
+          "description": "Whether public text contains packaging-level redactions."
+        },
+        {
+          "name": "source_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Primary contributing source."
+        },
+        {
+          "name": "source_name",
+          "type": "string",
+          "nullable": false,
+          "description": "Human-readable primary source name."
+        },
+        {
+          "name": "source_ids",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "All contributing source IDs as a typed list."
+        },
+        {
+          "name": "provenance",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen provenance category."
+        },
+        {
+          "name": "evidence_type",
+          "type": "string",
+          "nullable": true,
+          "description": "Frozen evidence type when available."
+        },
+        {
+          "name": "structural_family_id",
+          "type": "string",
+          "nullable": true,
+          "description": "Malicious structural-family ID; null for benign rows."
+        },
+        {
+          "name": "normalized_hash",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen normalized identity hash."
+        },
+        {
+          "name": "exact_hash",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen exact Skill-text hash."
+        },
+        {
+          "name": "release_status",
+          "type": "string",
+          "nullable": false,
+          "description": "Public text-release decision."
+        },
+        {
+          "name": "source_pointer",
+          "type": "string",
+          "nullable": true,
+          "description": "Public source or project URL; not a local path."
+        },
+        {
+          "name": "attack_categories",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Harmonized attack display names as a typed list; [] means unmapped."
+        },
+        {
+          "name": "attack_category_codes",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Stable harmonized attack codes corresponding to attack_categories."
+        },
+        {
+          "name": "impact_categories",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Derived harmonized impact display names as a typed list; [] means unmapped."
+        },
+        {
+          "name": "impact_category_codes",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Stable derived impact codes corresponding to impact_categories."
+        },
+        {
+          "name": "text_origin_source_id",
+          "type": "string",
+          "nullable": true,
+          "description": "Source ID for the public text origin when available."
+        }
+      ]
+    },
+    "metadata": {
+      "file": "metadata.parquet",
+      "fields": [
+        {
+          "name": "benchmark_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Stable primary benchmark identity."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen label code: 1 is malicious and 0 is benign."
+        },
+        {
+          "name": "text_available",
+          "type": "boolean",
+          "nullable": false,
+          "description": "Whether public static text is present."
+        },
+        {
+          "name": "text_redacted",
+          "type": "boolean",
+          "nullable": false,
+          "description": "Whether public text contains packaging-level redactions."
+        },
+        {
+          "name": "source_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Primary contributing source."
+        },
+        {
+          "name": "source_name",
+          "type": "string",
+          "nullable": false,
+          "description": "Human-readable primary source name."
+        },
+        {
+          "name": "source_ids",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "All contributing source IDs as a typed list."
+        },
+        {
+          "name": "provenance",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen provenance category."
+        },
+        {
+          "name": "evidence_type",
+          "type": "string",
+          "nullable": true,
+          "description": "Frozen evidence type when available."
+        },
+        {
+          "name": "structural_family_id",
+          "type": "string",
+          "nullable": true,
+          "description": "Malicious structural-family ID; null for benign rows."
+        },
+        {
+          "name": "normalized_hash",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen normalized identity hash."
+        },
+        {
+          "name": "exact_hash",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen exact Skill-text hash."
+        },
+        {
+          "name": "release_status",
+          "type": "string",
+          "nullable": false,
+          "description": "Public text-release decision."
+        },
+        {
+          "name": "source_pointer",
+          "type": "string",
+          "nullable": true,
+          "description": "Public source or project URL; not a local path."
+        },
+        {
+          "name": "attack_categories",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Harmonized attack display names as a typed list; [] means unmapped."
+        },
+        {
+          "name": "attack_category_codes",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Stable harmonized attack codes corresponding to attack_categories."
+        },
+        {
+          "name": "impact_categories",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Derived harmonized impact display names as a typed list; [] means unmapped."
+        },
+        {
+          "name": "impact_category_codes",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Stable derived impact codes corresponding to impact_categories."
+        },
+        {
+          "name": "text_origin_source_id",
+          "type": "string",
+          "nullable": true,
+          "description": "Source ID for the public text origin when available."
+        }
+      ]
+    },
+    "attack_taxonomy": {
+      "file": "attack_taxonomy.parquet",
+      "fields": [
+        {
+          "name": "benchmark_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Stable primary benchmark identity."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen label code: 1 is malicious and 0 is benign."
+        },
+        {
+          "name": "source_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Primary contributing source."
+        },
+        {
+          "name": "source_name",
+          "type": "string",
+          "nullable": false,
+          "description": "Human-readable primary source name."
+        },
+        {
+          "name": "source_ids",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "All contributing source IDs as a typed list."
+        },
+        {
+          "name": "normalized_hash",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen normalized identity hash."
+        },
+        {
+          "name": "attack_categories",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Harmonized attack display names as a typed list; [] means unmapped."
+        },
+        {
+          "name": "attack_category_codes",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Stable harmonized attack codes corresponding to attack_categories."
+        },
+        {
+          "name": "mapping_provenance",
+          "type": "string",
+          "nullable": false,
+          "description": "Provenance statement for taxonomy mapping."
+        },
+        {
+          "name": "release_status",
+          "type": "string",
+          "nullable": false,
+          "description": "Public text-release decision."
+        }
+      ]
+    },
+    "impact_taxonomy": {
+      "file": "impact_taxonomy.parquet",
+      "fields": [
+        {
+          "name": "benchmark_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Stable primary benchmark identity."
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen label code: 1 is malicious and 0 is benign."
+        },
+        {
+          "name": "source_id",
+          "type": "string",
+          "nullable": false,
+          "description": "Primary contributing source."
+        },
+        {
+          "name": "source_name",
+          "type": "string",
+          "nullable": false,
+          "description": "Human-readable primary source name."
+        },
+        {
+          "name": "source_ids",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "All contributing source IDs as a typed list."
+        },
+        {
+          "name": "normalized_hash",
+          "type": "string",
+          "nullable": false,
+          "description": "Frozen normalized identity hash."
+        },
+        {
+          "name": "impact_categories",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Derived harmonized impact display names as a typed list; [] means unmapped."
+        },
+        {
+          "name": "impact_category_codes",
+          "type": "list[string]",
+          "nullable": false,
+          "description": "Stable derived impact codes corresponding to impact_categories."
+        },
+        {
+          "name": "mapping_provenance",
+          "type": "string",
+          "nullable": false,
+          "description": "Provenance statement for taxonomy mapping."
+        },
+        {
+          "name": "release_status",
+          "type": "string",
+          "nullable": false,
+          "description": "Public text-release decision."
+        }
+      ]
+    }
+  },
+  "fields": [
+    {
+      "name": "benchmark_id",
+      "type": "string",
+      "nullable": false,
+      "description": "Stable primary benchmark identity."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "nullable": false,
+      "description": "Frozen label code: 1 is malicious and 0 is benign."
+    },
+    {
+      "name": "skill_text",
+      "type": "string",
+      "nullable": true,
+      "description": "Static Skill text; null only for intentionally withheld records."
+    },
+    {
+      "name": "text_available",
+      "type": "boolean",
+      "nullable": false,
+      "description": "Whether public static text is present."
+    },
+    {
+      "name": "text_redacted",
+      "type": "boolean",
+      "nullable": false,
+      "description": "Whether public text contains packaging-level redactions."
+    },
+    {
+      "name": "source_id",
+      "type": "string",
+      "nullable": false,
+      "description": "Primary contributing source."
+    },
+    {
+      "name": "source_name",
+      "type": "string",
+      "nullable": false,
+      "description": "Human-readable primary source name."
+    },
+    {
+      "name": "source_ids",
+      "type": "list[string]",
+      "nullable": false,
+      "description": "All contributing source IDs as a typed list."
+    },
+    {
+      "name": "provenance",
+      "type": "string",
+      "nullable": false,
+      "description": "Frozen provenance category."
+    },
+    {
+      "name": "evidence_type",
+      "type": "string",
+      "nullable": true,
+      "description": "Frozen evidence type when available."
+    },
+    {
+      "name": "structural_family_id",
+      "type": "string",
+      "nullable": true,
+      "description": "Malicious structural-family ID; null for benign rows."
+    },
+    {
+      "name": "normalized_hash",
+      "type": "string",
+      "nullable": false,
+      "description": "Frozen normalized identity hash."
+    },
+    {
+      "name": "exact_hash",
+      "type": "string",
+      "nullable": false,
+      "description": "Frozen exact Skill-text hash."
+    },
+    {
+      "name": "release_status",
+      "type": "string",
+      "nullable": false,
+      "description": "Public text-release decision."
+    },
+    {
+      "name": "source_pointer",
+      "type": "string",
+      "nullable": true,
+      "description": "Public source or project URL; not a local path."
+    },
+    {
+      "name": "attack_categories",
+      "type": "list[string]",
+      "nullable": false,
+      "description": "Harmonized attack display names as a typed list; [] means unmapped."
+    },
+    {
+      "name": "attack_category_codes",
+      "type": "list[string]",
+      "nullable": false,
+      "description": "Stable harmonized attack codes corresponding to attack_categories."
+    },
+    {
+      "name": "impact_categories",
+      "type": "list[string]",
+      "nullable": false,
+      "description": "Derived harmonized impact display names as a typed list; [] means unmapped."
+    },
+    {
+      "name": "impact_category_codes",
+      "type": "list[string]",
+      "nullable": false,
+      "description": "Stable derived impact codes corresponding to impact_categories."
+    },
+    {
+      "name": "text_origin_source_id",
+      "type": "string",
+      "nullable": true,
+      "description": "Source ID for the public text origin when available."
+    },
+    {
+      "name": "mapping_provenance",
+      "type": "string",
+      "nullable": false,
+      "description": "Provenance statement for taxonomy mapping."
+    }
+  ],
+  "category_display_names": {
+    "credential_access": "Credential Access",
+    "data_exfiltration_disclosure": "Data Exfiltration / Disclosure",
+    "defense_evasion_obfuscation": "Defense Evasion / Obfuscation",
+    "dependency_supply_chain": "Dependency / Supply-Chain Abuse",
+    "discovery_reconnaissance": "Discovery / Reconnaissance",
+    "execution_code_delivery": "Execution / Code Delivery",
+    "instruction_goal_memory_manipulation": "Instruction / Goal / Memory Manipulation",
+    "integrity_output_manipulation": "Integrity / Output Manipulation",
+    "persistence_control": "Persistence / Control",
+    "privilege_tool_authority_abuse": "Privilege / Tool / Authority Abuse",
+    "resource_availability_abuse": "Resource / Availability Abuse",
+    "unauthorized_code_execution_system_control": "Unauthorized Code Execution / System Control",
+    "sensitive_data_disclosure": "Sensitive Data Disclosure",
+    "credential_compromise": "Credential Compromise",
+    "agent_control_instruction_compromise": "Agent-Control / Instruction Compromise",
+    "privilege_control_manipulation": "Privilege / Control Manipulation",
+    "resource_service_abuse": "Resource / Service Abuse",
+    "persistence_sustained_control": "Persistence / Sustained Control",
+    "availability_destructive_impact": "Availability / Destructive Impact"
+  },
+  "taxonomy": {
+    "attack_categories": {
+      "mapped_identities": 4983,
+      "stable_codes": [
+        "credential_access",
+        "data_exfiltration_disclosure",
+        "defense_evasion_obfuscation",
+        "dependency_supply_chain",
+        "discovery_reconnaissance",
+        "execution_code_delivery",
+        "instruction_goal_memory_manipulation",
+        "integrity_output_manipulation",
+        "persistence_control",
+        "privilege_tool_authority_abuse",
+        "resource_availability_abuse"
+      ]
+    },
+    "impact_categories": {
+      "mapped_identities": 2128,
+      "semantics": "Derived harmonized impacts, not source-provided or ground-truth impacts.",
+      "stable_codes": [
+        "unauthorized_code_execution_system_control",
+        "sensitive_data_disclosure",
+        "credential_compromise",
+        "agent_control_instruction_compromise",
+        "privilege_control_manipulation",
+        "resource_service_abuse",
+        "persistence_sustained_control",
+        "availability_destructive_impact",
+        "integrity_output_manipulation"
+      ]
+    }
+  },
+  "null_policy": {
+    "skill_text": "null for WITHHELD_SENSITIVE, WITHHELD_SNAPSHOT, or WITHHELD_TECHNICAL; non-null otherwise.",
+    "structural_family_id": "null for benign rows; populated for malicious construction-context identities.",
+    "taxonomy_lists": "[] for unmapped identities; list values never serialized as delimiter strings."
+  }
+}

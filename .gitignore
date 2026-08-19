@@ -1,0 +1,52 @@
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Python environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Internal / private research material
+EXP/
+private/
+internal/
+internal_backups/
+results/tmp/
+tmp/
+cache/
+
+# Logs and local scratch
+*.log
+
+# Local archives (benchmark tables live as CSV/metadata, not zip bundles)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Editors
+*.swp
+*~
+.idea/
+.vscode/
