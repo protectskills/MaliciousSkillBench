@@ -2,9 +2,9 @@
   var links = window.MSB_PUBLIC_LINKS || {};
   var fallback = {
     PAPER_URL: "#paper",
-    DATASET_URL: "#dataset",
+    DATASET_URL: "https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench",
     GITHUB_URL: "https://github.com/protectskills/MaliciousSkillBench",
-    DOCS_URL: "#documentation"
+    DOCS_URL: "https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark"
   };
 
   document.querySelectorAll("[data-msb-link]").forEach(function (node) {

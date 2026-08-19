@@ -18,9 +18,9 @@
       <a class="brand" href="#main">MaliciousSkillBench</a>
       <nav class="nav" aria-label="Primary">
         <a data-msb-link="PAPER_URL" href="#paper">Paper</a>
-        <a data-msb-link="DATASET_URL" href="#dataset">Dataset</a>
-        <a data-msb-link="GITHUB_URL" href="#">GitHub</a>
-        <a data-msb-link="DOCS_URL" href="#documentation">Documentation</a>
+        <a data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
+        <a data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
+        <a data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
       </nav>
     </div>
   </header>
@@ -33,9 +33,9 @@
       <p class="lede">A consolidated benchmark of 9,740 Agent Skills from 13 public sources for controlled malicious-skill detection under random, structural-disjoint, and source-disjoint protocols.</p>
       <div class="actions">
         <a class="btn" data-msb-link="PAPER_URL" href="#paper">Paper</a>
-        <a class="btn secondary" data-msb-link="DATASET_URL" href="#dataset">Dataset</a>
-        <a class="btn secondary" data-msb-link="GITHUB_URL" href="#">GitHub</a>
-        <a class="btn secondary" data-msb-link="DOCS_URL" href="#documentation">Documentation</a>
+        <a class="btn secondary" data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
+        <a class="btn secondary" data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
+        <a class="btn secondary" data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
       </div>
     </section>
 
@@ -119,15 +119,15 @@
     <section class="wrap" id="dataset">
       <h2>Dataset Access</h2>
       <p class="section-copy">All 9,740 benchmark identities are represented in the public dataset; 9,549 provide public Skill text, while the remaining records retain metadata and provenance information without full text (5 sensitive-withheld, 186 snapshot-withheld). Hugging Face is the primary data host.</p>
+      <p class="section-copy">Dataset: <a href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench</a></p>
       <pre><code>from datasets import load_dataset
 
-dataset = load_dataset("ORG/MaliciousSkillBench")</code></pre>
-      <p class="section-copy"><code>ORG/MaliciousSkillBench</code> is a staging placeholder and is not a live repository.</p>
+dataset = load_dataset("ProtectSkills/MaliciousSkillBench")</code></pre>
     </section>
 
     <section class="wrap" id="documentation">
       <h2>Getting Started</h2>
-      <p class="section-copy">The <a href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> is the code and reproducibility hub. It hosts schema, source, taxonomy, and protocol documentation, frozen split manifests, and baseline evaluation scripts. The Paper and Dataset buttons remain inactive until public URLs are assigned.</p>
+      <p class="section-copy">The <a href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> is the code and reproducibility hub. It hosts schema, source, taxonomy, and protocol documentation, frozen split manifests, and baseline evaluation scripts. The Dataset button points to the Hugging Face repository. The Paper button remains inactive until a public paper URL is assigned.</p>
     </section>
 
     <section class="wrap" id="paper">

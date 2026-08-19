@@ -2,9 +2,9 @@
 
 **A Comprehensive Benchmark for Malicious Agent Skill Detection**
 
-[Paper](#paper) · [Dataset](#dataset-access) · [GitHub](https://github.com/protectskills/MaliciousSkillBench) · [Project page](docs/)
+[Paper](#paper) · [Dataset](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench) · [GitHub](https://github.com/protectskills/MaliciousSkillBench) · [Project page](docs/)
 
-The paper and Hugging Face dataset URLs will be added when they are assigned. They are not live links yet.
+The public paper URL is not yet assigned. The Hugging Face dataset is at [ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench).
 
 ## Overview
 
@@ -65,15 +65,15 @@ The miniature source × attack matrix in Figure 1 is schematic. Use Figure 2 for
 
 Hugging Face is the primary dataset distribution platform. This GitHub repository is the code, documentation, and reproducibility hub; it does not duplicate full Skill text.
 
-After publication, the default `primary` configuration can be loaded with:
+Dataset: [https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench)
+
+The default `primary` configuration can be loaded with:
 
 ```python
 from datasets import load_dataset
 
-dataset = load_dataset("ORG/MaliciousSkillBench")
+dataset = load_dataset("ProtectSkills/MaliciousSkillBench")
 ```
-
-`ORG/MaliciousSkillBench` is a placeholder and is not a live Hugging Face repository.
 
 All 9,740 benchmark identities are represented in the public dataset; 9,549 provide public Skill text, while the remaining records retain metadata and provenance information without full text.
 
@@ -154,7 +154,7 @@ python evaluation/validate_dataset.py --help
 python -c "from evaluation.metrics import macro_f1, malicious_recall, benign_fpr; print('ok')"
 ```
 
-Run a baseline only after obtaining the Hugging Face text tables. The CLI below is supported by the public script; it is not a live dataset claim:
+Run a baseline after obtaining the Hugging Face text tables from `ProtectSkills/MaliciousSkillBench`. The CLI below is supported by the public script:
 
 ```bash
 python baselines/run_baselines.py --help
