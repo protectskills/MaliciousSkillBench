@@ -32,7 +32,7 @@ from evaluation.metrics import detection_metrics  # noqa: E402
 
 MODELS = ("word_tfidf_logreg", "word_tfidf_linear_svm", "char_tfidf_linear_svm")
 PROTOCOLS = ("random", "source_balanced_random", "m_structural_disjoint", "source_disjoint")
-DEFAULT_DATASET_ID = "ORG/MaliciousSkillBench"
+DEFAULT_DATASET_ID = "ProtectSkills/MaliciousSkillBench"
 
 
 def parse_args() -> argparse.Namespace:
@@ -45,7 +45,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--dataset-id",
         default=DEFAULT_DATASET_ID,
-        help="Hugging Face dataset id. ORG/MaliciousSkillBench is a staging placeholder.",
+        help="Hugging Face dataset id.",
     )
     parser.add_argument("--primary-parquet", type=Path, help="Local primary.parquet (preferred before Hub publication).")
     parser.add_argument("--splits-dir", type=Path, default=ROOT / "metadata" / "splits")
@@ -94,10 +94,6 @@ def load_text_map(args: argparse.Namespace) -> dict[str, str]:
         }
     from datasets import load_dataset
 
-    if args.dataset_id == DEFAULT_DATASET_ID:
-        raise SystemExit(
-            "ORG/MaliciousSkillBench is a staging placeholder. Pass --primary-parquet for local files."
-        )
     data = load_dataset(args.dataset_id, split="train")
     return {
         row["benchmark_id"]: (row.get("skill_text") or "")

@@ -27,7 +27,7 @@ The resulting benchmark supports threat characterization and controlled detectio
 | Harmonized attack categories | 11 |
 | Attack-mapped malicious identities | 4,983 / 7,505 |
 
-The public dataset represents all 9,740 identities. Public Skill text is available for 9,549 records; 5 are sensitive-withheld and 186 are snapshot-withheld.
+The public dataset represents all 9,740 identities. Exact frozen Skill text is available for 9,735 records (7,500 malicious and 2,235 benign). Five malicious records provide sanitized public representations; the exact original text of those records remains withheld.
 
 ## Benchmark Construction
 
@@ -72,10 +72,23 @@ The default `primary` configuration can be loaded with:
 ```python
 from datasets import load_dataset
 
-dataset = load_dataset("ProtectSkills/MaliciousSkillBench")
+ds = load_dataset(
+    "ProtectSkills/MaliciousSkillBench",
+    "primary",
+    split="train",
+)
+
+def get_public_text(row):
+    return row["skill_text"] or row["public_skill_text"]
 ```
 
-All 9,740 benchmark identities are represented in the public dataset; 9,549 provide public Skill text, while the remaining records retain metadata and provenance information without full text.
+Exact frozen `skill_text` is available for 9,735 identities. For five malicious records containing sensitive credential material, `skill_text` is null and `public_skill_text` provides a sanitized representation. Do not treat those five sanitized texts as the paper's exact experimental inputs.
+
+Named protocol manifests:
+
+```python
+splits = load_dataset("ProtectSkills/MaliciousSkillBench", "splits")
+```
 
 Local metadata for inspection and protocol reproduction:
 
@@ -99,7 +112,7 @@ Source-Disjoint holds out `SRC009`, `SRC011`, and `SRC012`. Its test set contain
 
 Structural-disjoint and source-disjoint evaluation test whether detectors rely on near-duplicate structure or source-specific cues. Source-disjoint results describe source-conditioned shift; they are not a claim of universal out-of-distribution generalization.
 
-See [`benchmark/protocols.md`](benchmark/protocols.md) for protocol definitions.
+See [`benchmark/protocols.md`](benchmark/protocols.md) for protocol definitions. The frozen benchmark retains 4,588 structural-family identifiers. After conservative cross-label exclusion, 4,575 of these identifiers are represented by at least one final primary malicious identity; 13 retained family IDs have no final primary member.
 
 ## Baselines
 

@@ -30,7 +30,7 @@ python baselines/run_baselines.py \
   --seed 42
 ```
 
-`--dataset-id ORG/MaliciousSkillBench` is a staging placeholder, not a live repository.
+The default dataset id is `ProtectSkills/MaliciousSkillBench`.
 
 Default seed is 42. Full paper tables used seeds 42/43/44; this public CLI defaults to a single seed so that a reproduction run is deterministic and inspectable.
 

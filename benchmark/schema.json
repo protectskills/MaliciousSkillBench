@@ -21,19 +21,19 @@
           "name": "skill_text",
           "type": "string",
           "nullable": true,
-          "description": "Static Skill text; null only for intentionally withheld records."
+          "description": "Exact frozen Skill text when publicly available; null for the five records whose original text is withheld."
         },
         {
           "name": "text_available",
           "type": "boolean",
           "nullable": false,
-          "description": "Whether public static text is present."
+          "description": "Whether exact frozen skill_text is present. False for the five original-withheld records even though public_skill_text is provided."
         },
         {
           "name": "text_redacted",
           "type": "boolean",
           "nullable": false,
-          "description": "Whether public text contains packaging-level redactions."
+          "description": "True when the public representation is sanitized or contains packaging-level credential redaction. For REDACTED_TEXT records this refers to public_skill_text."
         },
         {
           "name": "source_id",
@@ -75,19 +75,19 @@
           "name": "normalized_hash",
           "type": "string",
           "nullable": false,
-          "description": "Frozen normalized identity hash."
+          "description": "Frozen normalized identity hash of the original artifact. For redacted records this identifies the frozen original, not the sanitized public representation."
         },
         {
           "name": "exact_hash",
           "type": "string",
           "nullable": false,
-          "description": "Frozen exact Skill-text hash."
+          "description": "Frozen exact Skill-text hash of the original artifact. For redacted records this identifies the frozen original, not the sanitized public representation."
         },
         {
           "name": "release_status",
           "type": "string",
           "nullable": false,
-          "description": "Public text-release decision."
+          "description": "Public text-release decision: FULL_TEXT or REDACTED_TEXT."
         },
         {
           "name": "source_pointer",
@@ -124,6 +124,30 @@
           "type": "string",
           "nullable": true,
           "description": "Source ID for the public text origin when available."
+        },
+        {
+          "name": "public_skill_text",
+          "type": "string",
+          "nullable": true,
+          "description": "Sanitized public text provided only when exact frozen skill_text cannot be released because it contains sensitive credential material. Null for records whose exact skill_text is public."
+        },
+        {
+          "name": "redaction_reason",
+          "type": "string",
+          "nullable": true,
+          "description": "Categorical redaction reason. sensitive_credential_material for the five sanitized records; null otherwise."
+        },
+        {
+          "name": "original_text_withheld",
+          "type": "boolean",
+          "nullable": false,
+          "description": "True when the exact frozen original text remains withheld. True only for the five credential-bearing records."
+        },
+        {
+          "name": "public_text_sha256",
+          "type": "string",
+          "nullable": true,
+          "description": "SHA-256 of public_skill_text for sanitized records. Does not replace normalized_hash or exact_hash, which identify the frozen original artifact."
         }
       ]
     },
@@ -146,13 +170,13 @@
           "name": "text_available",
           "type": "boolean",
           "nullable": false,
-          "description": "Whether public static text is present."
+          "description": "Whether exact frozen skill_text is present. False for the five original-withheld records even though public_skill_text is provided."
         },
         {
           "name": "text_redacted",
           "type": "boolean",
           "nullable": false,
-          "description": "Whether public text contains packaging-level redactions."
+          "description": "True when the public representation is sanitized or contains packaging-level credential redaction. For REDACTED_TEXT records this refers to public_skill_text."
         },
         {
           "name": "source_id",
@@ -194,19 +218,19 @@
           "name": "normalized_hash",
           "type": "string",
           "nullable": false,
-          "description": "Frozen normalized identity hash."
+          "description": "Frozen normalized identity hash of the original artifact. For redacted records this identifies the frozen original, not the sanitized public representation."
         },
         {
           "name": "exact_hash",
           "type": "string",
           "nullable": false,
-          "description": "Frozen exact Skill-text hash."
+          "description": "Frozen exact Skill-text hash of the original artifact. For redacted records this identifies the frozen original, not the sanitized public representation."
         },
         {
           "name": "release_status",
           "type": "string",
           "nullable": false,
-          "description": "Public text-release decision."
+          "description": "Public text-release decision: FULL_TEXT or REDACTED_TEXT."
         },
         {
           "name": "source_pointer",
@@ -243,6 +267,18 @@
           "type": "string",
           "nullable": true,
           "description": "Source ID for the public text origin when available."
+        },
+        {
+          "name": "redaction_reason",
+          "type": "string",
+          "nullable": true,
+          "description": "Categorical redaction reason. sensitive_credential_material for the five sanitized records; null otherwise."
+        },
+        {
+          "name": "original_text_withheld",
+          "type": "boolean",
+          "nullable": false,
+          "description": "True when the exact frozen original text remains withheld. True only for the five credential-bearing records."
         }
       ]
     },
@@ -394,19 +430,19 @@
       "name": "skill_text",
       "type": "string",
       "nullable": true,
-      "description": "Static Skill text; null only for intentionally withheld records."
+      "description": "Exact frozen Skill text when publicly available; null for the five records whose original text is withheld."
     },
     {
       "name": "text_available",
       "type": "boolean",
       "nullable": false,
-      "description": "Whether public static text is present."
+      "description": "Whether exact frozen skill_text is present. False for the five original-withheld records even though public_skill_text is provided."
     },
     {
       "name": "text_redacted",
       "type": "boolean",
       "nullable": false,
-      "description": "Whether public text contains packaging-level redactions."
+      "description": "True when the public representation is sanitized or contains packaging-level credential redaction. For REDACTED_TEXT records this refers to public_skill_text."
     },
     {
       "name": "source_id",
@@ -448,19 +484,19 @@
       "name": "normalized_hash",
       "type": "string",
       "nullable": false,
-      "description": "Frozen normalized identity hash."
+      "description": "Frozen normalized identity hash of the original artifact. For redacted records this identifies the frozen original, not the sanitized public representation."
     },
     {
       "name": "exact_hash",
       "type": "string",
       "nullable": false,
-      "description": "Frozen exact Skill-text hash."
+      "description": "Frozen exact Skill-text hash of the original artifact. For redacted records this identifies the frozen original, not the sanitized public representation."
     },
     {
       "name": "release_status",
       "type": "string",
       "nullable": false,
-      "description": "Public text-release decision."
+      "description": "Public text-release decision: FULL_TEXT or REDACTED_TEXT."
     },
     {
       "name": "source_pointer",
@@ -497,6 +533,30 @@
       "type": "string",
       "nullable": true,
       "description": "Source ID for the public text origin when available."
+    },
+    {
+      "name": "public_skill_text",
+      "type": "string",
+      "nullable": true,
+      "description": "Sanitized public text provided only when exact frozen skill_text cannot be released because it contains sensitive credential material. Null for records whose exact skill_text is public."
+    },
+    {
+      "name": "redaction_reason",
+      "type": "string",
+      "nullable": true,
+      "description": "Categorical redaction reason. sensitive_credential_material for the five sanitized records; null otherwise."
+    },
+    {
+      "name": "original_text_withheld",
+      "type": "boolean",
+      "nullable": false,
+      "description": "True when the exact frozen original text remains withheld. True only for the five credential-bearing records."
+    },
+    {
+      "name": "public_text_sha256",
+      "type": "string",
+      "nullable": true,
+      "description": "SHA-256 of public_skill_text for sanitized records. Does not replace normalized_hash or exact_hash, which identify the frozen original artifact."
     },
     {
       "name": "mapping_provenance",
@@ -560,8 +620,13 @@
     }
   },
   "null_policy": {
-    "skill_text": "null for WITHHELD_SENSITIVE, WITHHELD_SNAPSHOT, or WITHHELD_TECHNICAL; non-null otherwise.",
+    "skill_text": "null only for the five REDACTED_TEXT records whose exact original text is withheld; non-null for FULL_TEXT records.",
+    "public_skill_text": "non-null only for the five REDACTED_TEXT records; null for all FULL_TEXT records so exact text is not duplicated.",
     "structural_family_id": "null for benign rows; populated for malicious construction-context identities.",
-    "taxonomy_lists": "[] for unmapped identities; list values never serialized as delimiter strings."
-  }
+    "taxonomy_lists": "[] for unmapped identities; list values never serialized as delimiter strings.",
+    "redaction_reason": "sensitive_credential_material for the five sanitized records; null otherwise."
+  },
+  "top_level_fields_scope": "union_across_configs",
+  "top_level_fields_note": "Top-level fields is the union of fields across named configs, including taxonomy-only mapping_provenance. It is not a second primary schema. Use configs.<name>.fields for the contract of each Parquet file.",
+  "hash_semantics": "normalized_hash and exact_hash identify the frozen original artifact. They are not recomputed from sanitized public_skill_text. public_text_sha256 is an optional hash of the sanitized public representation only."
 }

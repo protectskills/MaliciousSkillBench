@@ -2,7 +2,7 @@
 
 MaliciousSkillBench releases four frozen protocols. Use the supplied manifests in [`metadata/splits/`](../metadata/splits/). Do not regenerate splits.
 
-Each protocol CSV has one row per benchmark identity with columns `benchmark_id`, `label`, `source_id`, and `split`. Join to the primary table on `benchmark_id`.
+Each protocol CSV has one row per benchmark identity with columns `benchmark_id`, `label`, `source_id`, and `split`. Join to the primary table on `benchmark_id`. Hugging Face also publishes typed Parquet copies of the same frozen membership tables; those Parquet files are the official `load_dataset(..., "splits")` path.
 
 ## Protocol sizes
 
@@ -26,6 +26,8 @@ All four manifests contain 9,740 rows.
 **Source-Disjoint.** Training sources and evaluation sources are disjoint. Held-out sources are `SRC009`, `SRC011`, and `SRC012`. The test set contains 839 malicious and 545 benign identities. Results from this protocol describe **source-conditioned shift**. They should not be reported as universal unseen-source or out-of-distribution generalization.
 
 The 8 Source-Disjoint `excluded` identities are retained for exact protocol accounting and are outside train/validation/test.
+
+The frozen benchmark retains 4,588 structural-family identifiers. After conservative cross-label exclusion, 4,575 of these identifiers are represented by at least one final primary malicious identity; 13 retained family IDs have no final primary member.
 
 ## Recommended reporting
 

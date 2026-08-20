@@ -9,7 +9,13 @@
   "attack_mapped": 4983,
   "impact_mapped": 2128,
   "attack_impact_intersection": 1888,
-  "public_text": 9549,
+  "public_text": 9735,
   "withheld_sensitive": 5,
-  "withheld_snapshot": 186
+  "withheld_snapshot": 0,
+  "exact_public_text": 9735,
+  "exact_malicious_text": 7500,
+  "exact_benign_text": 2235,
+  "sanitized_public_text": 5,
+  "public_readable_text": 9740,
+  "withheld_sensitive_original": 5
 }
