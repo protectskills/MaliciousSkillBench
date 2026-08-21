@@ -2,9 +2,9 @@
 
 **A Comprehensive Benchmark for Malicious Agent Skill Detection**
 
-[Paper](#paper) · [Dataset](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench) · [GitHub](https://github.com/protectskills/MaliciousSkillBench) · [Project page](docs/)
+[Paper](https://arxiv.org/abs/2608.19901) · [Dataset](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench) · [GitHub](https://github.com/protectskills/MaliciousSkillBench) · [Project page](https://protectskills.github.io/MaliciousSkillBench/)
 
-The public paper URL is not yet assigned. The Hugging Face dataset is at [ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench).
+Paper: [arXiv:2608.19901](https://arxiv.org/abs/2608.19901) ([PDF](https://arxiv.org/pdf/2608.19901)). The Hugging Face dataset is at [ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench).
 
 ## Overview
 
@@ -181,20 +181,25 @@ Do not execute untrusted Skills, follow embedded destinations, or install compan
 
 Yue Wang, Yi Liu, Gelei Deng, Ying Zhang, Yuekang Li, Zhenyu Chen, and Leo Zhang.
 
-The public paper URL is not yet assigned.
+Paper: [https://arxiv.org/abs/2608.19901](https://arxiv.org/abs/2608.19901)
+
+PDF: [https://arxiv.org/pdf/2608.19901](https://arxiv.org/pdf/2608.19901)
 
 ## Citation
 
 ```bibtex
-@unpublished{wang2026maliciousskillbench,
+@misc{wang2026maliciousskillbench,
   title={MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection},
   author={Wang, Yue and Liu, Yi and Deng, Gelei and Zhang, Ying and Li, Yuekang and Chen, Zhenyu and Zhang, Leo},
-  note={Unpublished manuscript. Publication venue and persistent identifier to be added.},
-  year={2026}
+  year={2026},
+  eprint={2608.19901},
+  archivePrefix={arXiv},
+  primaryClass={cs.CR},
+  url={https://arxiv.org/abs/2608.19901}
 }
 ```
 
-See [`CITATION.cff`](CITATION.cff). This entry does not claim an arXiv identifier, DOI, or conference acceptance.
+See [`CITATION.cff`](CITATION.cff).
 
 ## Responsible Use
 

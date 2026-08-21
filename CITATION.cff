@@ -1,8 +1,17 @@
 cff-version: 1.2.0
 title: "MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection"
-message: "If you use MaliciousSkillBench, please cite the title and author list below. A persistent identifier will be added when available."
+message: "If you use MaliciousSkillBench, please cite the paper below."
 type: dataset
+url: "https://arxiv.org/abs/2608.19901"
 repository-code: "https://github.com/protectskills/MaliciousSkillBench"
+repository-artifact: "https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench"
+identifiers:
+  - type: url
+    value: "https://arxiv.org/abs/2608.19901"
+    description: arXiv abstract
+  - type: other
+    value: "arXiv:2608.19901"
+    description: arXiv identifier
 authors:
   - family-names: Wang
     given-names: Yue
@@ -32,3 +41,27 @@ keywords:
   - prompt injection
   - security benchmark
   - provenance
+preferred-citation:
+  type: generic
+  title: "MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection"
+  authors:
+    - family-names: Wang
+      given-names: Yue
+    - family-names: Liu
+      given-names: Yi
+    - family-names: Deng
+      given-names: Gelei
+    - family-names: Zhang
+      given-names: Ying
+    - family-names: Li
+      given-names: Yuekang
+    - family-names: Chen
+      given-names: Zhenyu
+    - family-names: Zhang
+      given-names: Leo
+  year: 2026
+  url: "https://arxiv.org/abs/2608.19901"
+  identifiers:
+    - type: other
+      value: "arXiv:2608.19901"
+      description: arXiv identifier

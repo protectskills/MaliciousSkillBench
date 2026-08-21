@@ -1,7 +1,6 @@
 window.MSB_PUBLIC_LINKS = {
-  // PAPER_URL remains empty until a public paper URL is assigned.
-  // Do not invent an arXiv or PDF address.
-  PAPER_URL: "",
+  PAPER_URL: "https://arxiv.org/abs/2608.19901",
+  PAPER_PDF_URL: "https://arxiv.org/pdf/2608.19901",
   DATASET_URL: "https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench",
   GITHUB_URL: "https://github.com/protectskills/MaliciousSkillBench",
   DOCS_URL: "https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark"
