@@ -26,7 +26,6 @@ audit.
 - Project: MaliciousAgentSkillsBench
 - Paper: https://arxiv.org/abs/2602.06547
 - Dataset: https://huggingface.co/datasets/ProtectSkills/MaliciousAgentSkillsBench
-- Full packages: the reviewed 157-artifact historical snapshot release is available through the [SRC002 GitHub Release](https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages). Those package bytes retain their recorded upstream terms (MIT, attribution required) and are not relicensed under Apache-2.0 or CC BY 4.0.
 
 ### SRC003 — Skill-Inject
 

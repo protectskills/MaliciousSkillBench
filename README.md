@@ -2,7 +2,7 @@
 
 **A Comprehensive Benchmark for Malicious Agent Skill Detection**
 
-[Paper](https://arxiv.org/abs/2608.19901) · [Dataset](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench) · [Full Packages](https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages) · [GitHub](https://github.com/protectskills/MaliciousSkillBench) · [Project page](https://protectskills.github.io/MaliciousSkillBench/)
+[Paper](https://arxiv.org/abs/2608.19901) · [Dataset](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench) · [GitHub](https://github.com/protectskills/MaliciousSkillBench) · [Project page](https://protectskills.github.io/MaliciousSkillBench/)
 
 Paper: [arXiv:2608.19901](https://arxiv.org/abs/2608.19901) ([PDF](https://arxiv.org/pdf/2608.19901)). The Hugging Face dataset is at [ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench).
 
@@ -63,11 +63,7 @@ The miniature source × attack matrix in Figure 1 is schematic. Use Figure 2 for
 
 ## Dataset Access
 
-Hugging Face hosts the directly loadable static benchmark and metadata. This GitHub repository hosts code, documentation, reproducibility artifacts, and reviewed full-package releases through GitHub Releases. The Git source tree does not contain the package files.
-
-### Static benchmark / index
-
-Hugging Face remains the directly loadable static benchmark/index layer. It provides static Skill text, labels, provenance, taxonomy, structural metadata, split membership, and hashes.
+Hugging Face is the primary dataset distribution platform. This GitHub repository is the code, documentation, and reproducibility hub; it does not duplicate full Skill text.
 
 Dataset: [https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench)
 
@@ -100,28 +96,6 @@ Local metadata for inspection and protocol reproduction:
 - [`metadata/source_registry.csv`](metadata/source_registry.csv)
 - [`metadata/structural_families.csv`](metadata/structural_families.csv)
 - [`metadata/splits/`](metadata/splits/)
-
-### Full Skill packages
-
-Full package artifacts are distributed separately through GitHub Releases when source artifacts are available and redistribution is authorized.
-
-The current first full-package release is SRC002 (MaliciousAgentSkillsBench):
-
-- 157 accepted source artifacts
-- 152 exact to the preserved author snapshot
-- 5 sanitized (not bit-identical; sensitive credential material was removed)
-- 153 correspond to SRC002 primary benchmark rows; 3 are cross-source overlaps mapped to existing frozen identities; 1 (`smp_3604:dexter`) is source-release-only because of a cross-label conflict
-- 0 accepted SRC002 source packages are missing or ambiguous
-
-Other source package artifacts are **not** publicly downloadable yet.
-
-- Release: [SRC002 Full Skill Packages](https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages)
-- Documentation: [`benchmark/package_release.md`](benchmark/package_release.md)
-- Manifest: [`metadata/packages/src002/package_manifest.csv`](metadata/packages/src002/package_manifest.csv)
-
-Archive SHA256: `bf2532cb0e7fd3a76a2cf1bbb53cff1cd77fe67b3f152f802c084ef196860ed5`
-
-Do not execute untrusted package contents.
 
 ## Evaluation Protocols
 
@@ -251,7 +225,6 @@ We thank the authors of the 13 public sources registered in [`metadata/source_re
 - [`benchmark/sources.md`](benchmark/sources.md)
 - [`benchmark/taxonomy.md`](benchmark/taxonomy.md)
 - [`benchmark/protocols.md`](benchmark/protocols.md)
-- [`benchmark/package_release.md`](benchmark/package_release.md)
 - [`baselines/README.md`](baselines/README.md)
 - [`scanner_eval/README.md`](scanner_eval/README.md)
 - [`docs/`](docs/) — project page source

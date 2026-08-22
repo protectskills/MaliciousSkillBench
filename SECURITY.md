@@ -1,10 +1,9 @@
 # Security Policy
 
-This repository documents a defensive-research benchmark. Hugging Face hosts
-static Skill instructions, metadata, and evaluation tables. Reviewed full
-Skill package artifacts for SRC002 are distributed separately through GitHub
-Releases. Treat those packages as untrusted research samples and do not
-execute them.
+This repository documents a defensive-research benchmark. The public package
+includes malicious or adversarial Skill instructions as static text, plus
+metadata and evaluation code. It does not distribute executable malicious
+package bundles as the default release unit.
 
 ## What to report
 
