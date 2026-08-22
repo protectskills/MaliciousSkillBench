@@ -9,7 +9,7 @@ MaliciousSkillBench is intended for defensive security research and detection ev
 - Some exact original text is withheld when it contains sensitive credential material.
 - For those five records, a sanitized public representation is provided; the exact frozen original remains withheld.
 - Historical author-provided snapshots are no longer a withholding reason; their exact frozen text is public.
-- Executable malicious package bundles are not the default public release unit.
+- Package-level archives under `packages/`, where present, are untrusted research samples and must not be executed.
 
 All 9,740 benchmark identities remain in the public dataset records. Exact frozen Skill text is available for 9,735 identities. Five malicious records withhold the exact original text and provide a sanitized representation instead. Withheld originals retain identifiers, labels, provenance, hashes, and frozen split membership.
 

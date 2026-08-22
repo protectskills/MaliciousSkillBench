@@ -44,6 +44,7 @@ cache/
 *.tar
 *.tar.gz
 *.tgz
+!packages/*.tar.gz
 
 # Editors
 *.swp

@@ -2,8 +2,8 @@
 
 This repository documents a defensive-research benchmark. The public package
 includes malicious or adversarial Skill instructions as static text, plus
-metadata and evaluation code. It does not distribute executable malicious
-package bundles as the default release unit.
+metadata and evaluation code. Package-level archives under `packages/`, where
+present, are untrusted research samples and must not be executed.
 
 ## What to report
 
