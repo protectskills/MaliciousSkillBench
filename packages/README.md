@@ -1,15 +1,19 @@
 # Skill Packages
 
-This directory contains preserved source-level Skill package archives associated with MaliciousSkillBench.
+This directory contains source-level malicious Agent Skill artifacts
+corresponding to the 7,505 malicious identities in MaliciousSkillBench.
 
-The Hugging Face dataset provides the directly loadable benchmark representations and metadata. This directory preserves package-level artifacts where those artifacts are available and redistribution has been cleared.
+Artifacts are grouped by source. `package_manifest.csv` maps each frozen
+malicious benchmark identity to its source archive and package-relative path.
 
-Use `package_manifest.csv` to map benchmark identities and source artifacts to the corresponding archive and package-relative path.
+Some source artifacts are naturally multi-file Skill packages, while others
+are source-native single files. Sensitive credential values are replaced with
+sanitized placeholders where necessary; such cases are marked in the
+manifest.
 
-Current archives:
-
-- `SRC002_packages.tar.gz`
-
-Package coverage is source-dependent. Not every benchmark identity currently has a publicly redistributable multi-file package in this directory.
+The SRC002 archive preserves 157 accepted source artifacts: 153 primary
+benchmark identities, three cross-source duplicates, and one
+cross-label-excluded source artifact. The global package manifest contains the
+153 SRC002 identities that belong to the frozen malicious benchmark.
 
 Do not execute untrusted Skill package contents.

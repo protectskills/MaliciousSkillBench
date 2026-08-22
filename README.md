@@ -63,9 +63,9 @@ The miniature source × attack matrix in Figure 1 is schematic. Use Figure 2 for
 
 ## Dataset Access
 
-Hugging Face is the primary dataset distribution platform. This GitHub repository is the code, documentation, and reproducibility hub; it does not duplicate full Skill text.
+Hugging Face is the primary directly loadable benchmark distribution platform. The GitHub repository hosts code, documentation, reproducibility artifacts, and source-level malicious Skill packages.
 
-Package-level source artifacts are stored under [`packages/`](packages/) where redistribution has been cleared. The package manifest maps benchmark identities to archive paths; Hugging Face remains the directly loadable benchmark representation.
+Complete source-level artifacts for all 7,505 malicious benchmark identities are available under [`packages/`](packages/). The package manifest maps each benchmark identity to its source archive and package-relative path.
 
 Dataset: [https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench](https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench)
 

@@ -11,7 +11,8 @@ annotations, taxonomy mappings, and split manifests, unless otherwise noted.
 
 The registry below uses the public source records in
 `metadata/source_registry.csv`. It is an attribution pointer, not a license
-audit.
+audit. Package-level source artifacts, where present under `packages/`,
+retain their respective upstream terms.
 
 ## Registered public sources
 
