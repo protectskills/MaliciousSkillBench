@@ -19,6 +19,7 @@
       <nav class="nav" aria-label="Primary">
         <a data-msb-link="PAPER_URL" href="https://arxiv.org/abs/2608.19901">Paper</a>
         <a data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
+        <a data-msb-link="FULL_PACKAGES_URL" href="https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages">Full Packages</a>
         <a data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
         <a data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
       </nav>
@@ -36,6 +37,7 @@
           <div class="actions">
             <a class="btn" data-msb-link="PAPER_URL" href="https://arxiv.org/abs/2608.19901">Paper</a>
             <a class="btn secondary" data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">Dataset</a>
+            <a class="btn secondary" data-msb-link="FULL_PACKAGES_URL" href="https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages">Full Packages</a>
             <a class="btn secondary" data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub</a>
             <a class="btn secondary" data-msb-link="DOCS_URL" href="https://github.com/protectskills/MaliciousSkillBench/tree/main/benchmark">Documentation</a>
           </div>
@@ -147,16 +149,18 @@
 
     <section class="wrap" id="dataset">
       <h2>Dataset Access</h2>
-      <p class="section-copy">9,740 benchmark identities are publicly represented. Exact frozen text is available for 9,735; five sensitive records provide sanitized public representations. Hugging Face is the primary data host.</p>
-      <p class="section-copy">Dataset: <a href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench</a></p>
+      <p class="section-copy"><strong>Static Benchmark</strong> — Hugging Face hosts the directly loadable static benchmark and metadata for all 9,740 identities. Exact frozen text is available for 9,735; five sensitive records provide sanitized public representations.</p>
+      <p class="section-copy">Dataset: <a data-msb-link="DATASET_URL" href="https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench">https://huggingface.co/datasets/ProtectSkills/MaliciousSkillBench</a></p>
       <pre><code>from datasets import load_dataset
 
 dataset = load_dataset("ProtectSkills/MaliciousSkillBench")</code></pre>
+      <p class="section-copy"><strong>Full Skill Packages</strong> — reviewed source-package archives are distributed separately through GitHub Releases when redistribution is authorized. The current full-package release is SRC002 only: 157 accepted source artifacts (152 preserved snapshot packages and 5 sanitized packages). Other source packages are not publicly downloadable yet.</p>
+      <p class="section-copy">Full Packages: <a data-msb-link="FULL_PACKAGES_URL" href="https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages">https://github.com/protectskills/MaliciousSkillBench/releases/tag/src002-full-packages</a></p>
     </section>
 
     <section class="wrap" id="documentation">
       <h2>Getting Started</h2>
-      <p class="section-copy">The <a href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> is the code and reproducibility hub. It hosts schema, source, taxonomy, and protocol documentation, split manifests, and baseline evaluation scripts. The Dataset button points to the Hugging Face repository. The Paper button points to the public preprint.</p>
+      <p class="section-copy">The <a data-msb-link="GITHUB_URL" href="https://github.com/protectskills/MaliciousSkillBench">GitHub repository</a> hosts code, documentation, reproducibility artifacts, and reviewed full-package releases. The Dataset button points to the Hugging Face static benchmark. The Full Packages button points to the SRC002 GitHub Release. The Paper button points to the public preprint.</p>
     </section>
 
     <section class="wrap" id="paper">
@@ -169,7 +173,7 @@ dataset = load_dataset("ProtectSkills/MaliciousSkillBench")</code></pre>
 
     <section class="wrap" id="responsible-use">
       <h2>Responsible Use</h2>
-      <p class="section-copy">The benchmark contains malicious or adversarial Skill instructions for defensive research. Do not execute untrusted Skills. The public release emphasizes static instruction text; some content is withheld. See <a href="https://github.com/protectskills/MaliciousSkillBench/blob/main/RESPONSIBLE_USE.md">RESPONSIBLE_USE.md</a>.</p>
+      <p class="section-copy">The benchmark includes static public representations, and reviewed full package artifacts are additionally available for SRC002. Do not execute untrusted Skills or untrusted packages. See <a href="https://github.com/protectskills/MaliciousSkillBench/blob/main/RESPONSIBLE_USE.md">RESPONSIBLE_USE.md</a>.</p>
     </section>
   </main>
 
